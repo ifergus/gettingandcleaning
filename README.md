@@ -15,7 +15,7 @@ This repository contains a solution that demonstrate how to collect, work with, 
 
 A review of the source file (run_analysis.R) conveys the approach towards addressing the requirements of the project assignment.
 
-###Several functions are defined that 
+###Functions 
 
 * `get.measurement.types` - reads in the types of measurements from `features.txt`
 
