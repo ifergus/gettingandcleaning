@@ -1,9 +1,4 @@
-Feature Selection 
-=================
 
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
-
-Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
 ## Source Code Description
 Please review the source code for detailed comments of all functions and operations
@@ -26,6 +21,16 @@ Add the descriptive activity names and return the data frame.
 
 The resulting large data frame contains  *69 variables and 10,299 observations* – 66 measurements, and 3 variables containing (`activity_code, subject, and activity_desc`)
 
+2. Create `tidy.dataset` by calling the function `get.tidy.data.set`.
+
+Using the `large.dataset` create the tidy dataset by grouping the data by subject and activity and calculate the mean of each variable.  This is done be using the aggregate function.
+
+The data set is ordered by subject and activity.
+
+Unused columns are removed from the final data set
+
+The resulting data set contains 68 variables and 180 observations
+
 
 ## Signals
 These signals were used to estimate variables of the feature vector for each pattern:  
@@ -41,17 +46,22 @@ These signals were used to estimate variables of the feature vector for each pat
 *tBodyAccJerkMag
 *tBodyGyroMag
 *tBodyGyroJerkMag
-* fBodyAcc-XYZ
-* fBodyAccJerk-XYZ
-* fBodyGyro-XYZ
-* fBodyAccMag
-* fBodyAccJerkMag
-* fBodyGyroMag
-* fBodyGyroJerkMag
+*fBodyAcc-XYZ
+*fBodyAccJerk-XYZ
+*fBodyGyro-XYZ
+*fBodyAccMag
+*fBodyAccJerkMag
+*fBodyGyroMag
+*fBodyGyroJerkMag
 
 ##Variables
 
-The following variables are defined in tidy data set
+The following variables are defined in tidy data set.  WIth the exception of subject and acivity (which are integer and character, respectively) all values are numerics and contain the Mean of the corresponding subject and activity based on the large dataset.
+
+The set of variables that were extracted for this data set were derived from those that contain the following calculations 
+
+* mean(): Mean value
+* std(): Standard deviation
 
 1. "subject"                 
 2. "activity"                
@@ -123,12 +133,9 @@ The following variables are defined in tidy data set
 68. "fBodyBodyGyroJerkMagStd"
 
 
+##Feature Selection
 
-The set of variables that were estimated from these signals are: 
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-* mean(): Mean value
-* std(): Standard deviation
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
-
-
-The complete list of variables of each feature vector is available in 'features.txt'
