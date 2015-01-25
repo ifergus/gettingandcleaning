@@ -9,11 +9,12 @@ Finally, a tidy data set is created by taking the average of each variable for e
 
 ## Files
 The following files are stored in this repository:
+
 1. `README.md`  - This README file that describes the contents of the repository
 2. `run_analysis.R`  - The R source code file that perform the data transformation the results in the tidy data set
 3. `CodeBook.md` - a detailed description of the data, functions and approach used to create the tidy data
    
 
 ## Approach
-For specific details regarding the solution, please review `Cookbook.md`
+For specific details regarding the solution, please review `Codebook.md`
 
